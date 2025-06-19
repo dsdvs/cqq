@@ -1,0 +1,194 @@
+<!-- product-tech.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品与技术 - 绣韵流芳</title>
+    <style>
+        /* 继承主站样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "宋体", serif;
+        }
+        
+        body {
+            background-color: #f9f2e8;
+            color: #5a3e2a;
+            background-image: url('https://img.freepik.com/free-photo/chinese-pattern-background_53876-90035.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 技术展示卡片 */
+        .tech-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 2px solid #d2a57f;
+        }
+
+        .tech-card h2 {
+            color: #8c4a2f;
+            border-left: 5px solid #bc6c3c;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+
+        .tech-feature {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-box {
+            background: rgba(210, 140, 69, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>核心技术解析</h1>
+            <div class="subtitle">传统工艺与现代科技的完美结合</div>
+            <a href="绣韵流芳网站链接.html" class="btn" style="margin-top:20px;">返回首页</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tech-card">
+            <h2>核心技术架构</h2>
+            <div class="tech-feature">
+                <div class="feature-box">
+                    <h3>三维建模系统</h3>
+                    <p>采用Blender+AutoCAD双引擎，实现刺绣纹样的三维化转换，精度达到0.1mm</p>
+                </div>
+                <div class="feature-box">
+                    <h3>智能配色算法</h3>
+                    <p>基于机器学习的色彩管理系统，可自动生成128种配色方案</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <h2>生产流程图解</h2>
+            <div class="tech-feature">
+                <div class="feature-box">
+                    <h3>① 数字化设计</h3>
+                    <p>用户定制 → AI生成 → 三维建模</p>
+                </div>
+                <div class="feature-box">
+                    <h3>② 智能生产</h3>
+                    <p>3D打印基底 → 自动刺绣 → 品控检测</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- master-console.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绣韵流芳控制中心</title>
+    <style>
+        /* 集成控制台样式 */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .console-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #8c4a2f;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .console-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .status-light {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .online { background: #7bc043; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>绣韵流芳数字中枢</h1>
+            <div class="subtitle">全平台管理系统 V2.1</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard">
+            <a href="绣韵流芳网站链接.html" class="console-card">
+                <h3>主站门户
+                    <span class="status-light online"></span>
+                </h3>
+                <p>访问量：2,358</p>
+            </a>
+
+            <a href="product-tech.html" class="console-card">
+                <h3>技术中心
+                    <span class="status-light online"></span>
+                </h3>
+                <p>专利技术：12项</p>
+            </a>
+
+            <a href="project-summary.html" class="console-card">
+                <h3>项目概览
+                    <span class="status-light online"></span>
+                </h3>
+                <p>完成进度：75%</p>
+            </a>
+        </div>
+
+        <div class="data-panel">
+            <div class="data-item">
+                <h4>实时订单</h4>
+                <p class="highlight">327</p>
+            </div>
+            <div class="data-item">
+                <h4>设备状态</h4>
+                <p class="highlight">8/10 在线</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

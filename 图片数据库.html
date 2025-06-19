@@ -1,0 +1,159 @@
+<!-- image-database.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绣韵流芳 - 数字纹样库</title>
+    <!-- 复用原始样式 -->
+    <style>
+        /* 继承原始全局样式 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft YaHei", "宋体", serif; }
+        body { 
+            background: #f9f2e8 url('https://img.freepik.com/free-photo/chinese-pattern-background_53876-90035.jpg') fixed center/cover;
+            background-blend-mode: overlay;
+        }
+        /* 其余样式继承自原始文件，此处省略重复部分 */
+        
+        /* 新增图库样式 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+        .pattern-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(90, 62, 42, 0.15);
+            transition: transform 0.3s;
+        }
+        .pattern-card:hover {
+            transform: translateY(-5px);
+        }
+        .pattern-info {
+            padding: 15px;
+            color: #5a3e2a;
+        }
+        .filter-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .filter-btn {
+            background: rgba(188, 108, 60, 0.8);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>数字纹样库</h1>
+            <div class="subtitle">收录200+传统刺绣数字化纹样</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="filter-buttons">
+            <button class="filter-btn" onclick="filterSelection('all')">全部纹样</button>
+            <button class="filter-btn" onclick="filterSelection('flower')">花卉系列</button>
+            <button class="filter-btn" onclick="filterSelection('animal')">祥瑞动物</button>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- 示例纹样数据 -->
+            <div class="pattern-card flower">
+                <img src="https://img.freepik.com/free-vector/chinese-flower-pattern-design_53876-116139.jpg" style="width:100%">
+                <div class="pattern-info">
+                    <h3>牡丹富贵纹</h3>
+                    <p>针法：抢针/套针<br>年代：清代</p>
+                </div>
+            </div>
+            <!-- 更多纹样卡片... -->
+        </div>
+    </div>
+
+    <footer>
+        <!-- 复用原始页脚 -->
+    </footer>
+</body>
+</html>
+
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绣韵流芳 - 主控台</title>
+    <style>
+        /* 继承全部原始样式 */
+        /* 新增控制台样式 */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 30px 0;
+        }
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            min-height: 300px;
+            box-shadow: 0 6px 20px rgba(90, 62, 42, 0.1);
+        }
+        .dashboard-card h2 {
+            color: #8c4a2f;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>项目主控台</h1>
+            <div class="subtitle">绣韵流芳数字化管理平台</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h2>项目总览</h2>
+                <button class="btn" style="margin:15px" onclick="window.open('project-summary.html')">项目文档</button>
+                <p>当前订单数：128</p>
+                <p>合作院校：3所</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>设计中心</h2>
+                <button class="btn" style="margin:15px" onclick="window.open('image-database.html')">纹样库</button>
+                <button class="btn" style="margin:15px" onclick="window.open('product-tech.html')">3D建模</button>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>生产监控</h2>
+                <div class="progress-bar">广州职院：12件生产中</div>
+                <div class="progress-bar">苏州职院：8件待处理</div>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>数据统计</h2>
+                <p>用户访问量：2,345</p>
+                <p>设计保存量：487</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- 复用原始页脚 -->
+    </footer>
+</body>
+</html>

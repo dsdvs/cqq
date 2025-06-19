@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绣韵流芳主控中心</title>
+    <style>
+        /* 集成所有页面样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "宋体", serif;
+        }
+
+        body {
+            background-color: #f9f2e8;
+            color: #5a3e2a;
+            background-image: url('https://img.freepik.com/free-photo/chinese-pattern-background_53876-90035.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 控制面板样式 */
+        .control-panel {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* 导航侧边栏 */
+        .sidebar {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-item {
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: rgba(210, 140, 69, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* 内容展示区 */
+        .content-frame {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            height: 80vh;
+            overflow-y: auto;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 style="font-size: 2.5rem; color: #8c4a2f;">绣韵流芳智能控制台</h1>
+            <p style="font-size: 1.2rem; color: #bc6c3c;">数字化刺绣管理系统 V2.1</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="control-panel">
+            <div class="sidebar">
+                <div class="nav-item" onclick="loadPage('绣韵流芳网站链接.html')">
+                    🏠 官方网站
+                </div>
+                <div class="nav-item" onclick="loadPage('项目摘要1.html')">
+                    📄 项目摘要
+                </div>
+                <div class="nav-item" onclick="loadPage('product-tech.html')">
+                    ⚙️ 产品技术
+                </div>
+                <div class="nav-item" onclick="loadPage('operation-plan.html')">
+                    📈 运营计划
+                </div>
+            </div>
+
+            <div class="content-frame">
+                <iframe id="mainFrame" src="绣韵流芳网站链接.html"></iframe>
+            </div>
+        </div>
+
+        <!-- 状态栏 -->
+        <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.9); border-radius: 10px;">
+            <span>当前加载页面: </span>
+            <span id="currentPage" style="color: #bc6c3c;">绣韵流芳网站链接.html</span>
+        </div>
+    </div>
+
+    <script>
+        function loadPage(pageUrl) {
+            document.getElementById('mainFrame').src = pageUrl;
+            document.getElementById('currentPage').textContent = pageUrl;
+            
+            // 添加历史记录
+            window.history.pushState({page: pageUrl}, '', `#${pageUrl}`);
+        }
+
+        // 处理浏览器前进/后退
+        window.onpopstate = function(event) {
+            if(event.state){
+                document.getElementById('mainFrame').src = event.state.page;
+                document.getElementById('currentPage').textContent = event.state.page;
+            }
+        };
+    </script>
+</body>
+</html>
